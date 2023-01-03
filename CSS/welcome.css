@@ -1,0 +1,150 @@
+body {
+    background-color: black;
+}
+#home {
+    clip-path: url(#cache); 
+  }
+  
+  #red {
+    fill: none;
+    /* opacity: 1; */
+    stroke: #f23dd4;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+  }
+  
+  #blue {
+    fill: none;
+    /* opacity: 0.15; */
+    stroke: #7941f2;
+    stroke-width: 12;
+    stroke-miterlimit:10;
+    animation: show 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  
+  #light-blue {
+    fill: none;
+    /* opacity: 0.15; */
+    stroke: #05dbf2;
+    stroke-width: 6;
+    stroke-miterlimit:10;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 800;
+    animation: draw 4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;    
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+   }
+      }
+  
+  @keyframes show {
+    60% {
+      opacity: 0.8;
+   }
+    80% {
+      opacity: 0.9;
+   }
+    100% {
+      opacity: 1;
+   }
+      }
+  
+
+    /* Button */
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,800);
+
+    *,
+    *:before,
+    *:after {
+     
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font: 300 1em/1.5 "Open Sans", "Helvetica Neue", Arial, sans-serif;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+    
+    html,
+    body {
+      background: rgb(0, 0, 0);
+    }
+    
+    section.container {
+      /* display: block; */
+      /* min-width: 500px; */
+      margin-top: -800px;
+      text-align: center;
+    }
+    a:hover {
+      border-bottom: 1px solid rgb(255, 255, 255);
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      padding: 20px 0;
+    }
+    p {
+      font-size: 0.75em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 20px 0;
+    }
+    
+    button:hover {
+      cursor: pointer;
+    }
+    button {
+      background: transparent;
+      outline: none;
+      /* position: relative; */
+      border: 2px solid rgb(255, 255, 255);
+      padding: 15px 50px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /*button:before (attr data-hover)*/
+    button:hover:before {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    button:before {
+      content: attr(data-hover);
+      position: absolute;
+      top: 1.1em;
+      left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-size: 0.8em;
+      opacity: 0;
+      transform: translate(-100%, 0);
+      transition: all 0.3s ease-in-out;
+    }
+    /*button div (button text before hover)*/
+    button:hover div {
+      opacity: 0;
+      transform: translate(100%, 0);
+    }
+    button div {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-size: 0.8em;
+      transition: all 0.3s ease-in-out;
+    }
+    
